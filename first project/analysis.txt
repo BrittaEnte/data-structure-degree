@@ -1,0 +1,25 @@
+task zero
+big o notation O(3n) for example in the list calls 
+three pos. are called. incoming number,
+ outcoming number and time used. means 3n
+
+
+task one
+big o notation 0(2n) as each n is a telephone number
+that is called twice times per line in calls
+the first n is the number 7813000821 and 984534494.
+so 2 numbers are called. means 2n.
+
+
+task two
+big o notation every nummer is checked 2times for
+ each line. so O(2n)
+
+
+task three
+big O notation O(log n)
+
+
+task four
+big O notation O(4n) all i must be checked
+2times for the calls and 2times for the text file
