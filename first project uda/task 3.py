@@ -1,15 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-task 3 first project 
-
-
-# In[2]:
-
-
 """
 Read file into texts and calls.
 It's ok if you don't understand how to read files.
@@ -73,21 +61,23 @@ for i in range(len(calls)):
 
 figure = code_numbers.count('(080)')
 code_numbers = sorted(set(code_numbers))
-print("The nummern called people in Bangalore have codes:")
+print("The numbers called by people in Bangalore have codes:")
 for code in code_numbers:
     print(code)
 
 # calculate the percentage
-prozentsatz = figure * 100 / (len(calls))
+# how many numbers from bangalore called another number in bangalore?
+inlandcalls = 0
+anderenummer =0
+
+for call in calls:
+    if call[0][0:5]=="(080)":
+        if call[1][0:5] =="(080)":
+            inlandcalls += 1
+        else:
+            anderenummer +=1
+
+prozentsatz = inlandcalls / (inlandcalls+ anderenummer) *100
 new_satz = round(prozentsatz,2)
 print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(new_satz))
-
-
-
-# 
-
-# In[ ]:
-
-
-
 

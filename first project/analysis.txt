@@ -1,9 +1,11 @@
 task zero
 big o notation O(1) 
+each line in the csv file will be called 1 time.
 
 
 task one
-big o notation O(n log n)
+big o notation O(n)
+each number will be called once and put into the new set. 
 
 
 task two
@@ -12,9 +14,7 @@ inside loops. so O 2(n log n)
 
 
 task three
-big O notation O(n log n)
-
+O(n* nlogn), because i am sorting all the calls into tow different types. one type are the calls with 080 as number and the other are 140 as telemarkers.
 
 task four
-big O notation O(4n) all i must be checked
-2times for the calls and 2times for the text file
+the sorted method run O(n log n). all our for loops will run with O(n)

@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[7]:
-
-
 """
 Read file into texts and calls.
 It's ok if you don't understand how to read files.
@@ -37,31 +31,24 @@ The list of numbers should be print out one per line in lexicographic order with
 
 #issue a set 
 marketing_numbers = set()
-for i in range(len(calls)):
-    #adding all outgoing numbers 
-    marketing_numbers.add(calls[i][0])
-    # normally try and except is used to find mistake. now we try to remove i from the list.
-    try:
-        # deleting all the receiving numbers 
-        marketing_numbers.remove(calls[i][1])
-    except:
-        continue
 
-for i in range(len(texts)):
-    try:
-        # the number never sends text
-        marketing_numbers.remove(texts[i][0])
-    except:
-        pass
-    try:
-        # the number never gets text
-        marketing_numbers.remove(texts[i][1])
-    except:
-        continue
-
+# get all calls from the file
+for call in calls:
+    marketing_numbers.add(call[0])
+       
+# get all calls that are outgoing and delete them from that list. we use discard
+# discard will only delete it from the set, if it exists.
+for call in calls:
+    marketing_numbers.discard(call[1])
+    
+# now we must remove all numbers that get textmessage or send them
+for text in texts:
+    marketing_numbers.discard(text[0])
+    marketing_numbers.discard(text[1]) 
+    
+ 
+new_marketing_numbers = sorted(marketing_numbers)
 print ( "this numbers can be involved in telemarketing")
-print(*marketing_numbers, sep = "\n")    
+print(*new_marketing_numbers, sep = "\n")    
     
 
-
-# 
