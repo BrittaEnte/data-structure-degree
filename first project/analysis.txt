@@ -9,12 +9,13 @@ each number will be called once and put into the new set.
 
 
 task two
-big o notation sorting is O(n log n) and we are sorting 
-inside loops. so O 2(n log n)
+the new loop for finding the longest time and the number is just O(n)
 
 
 task three
-O(n* nlogn), because i am sorting all the calls into tow different types. one type are the calls with 080 as number and the other are 140 as telemarkers.
+the first loop got O(n). the sorted set got O ( n log n) and the last loop got again O(n). as we just take the 
+highest figure in the big o notation we got only O ( n log n).
+
 
 task four
 the sorted method run O(n log n). all our for loops will run with O(n)
