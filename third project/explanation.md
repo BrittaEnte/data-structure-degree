@@ -14,16 +14,18 @@ For this solution it is checked if the figure is more than the maximum or less t
 vice versa minimum. The function only loops one time trough the given list so the runtime is O(n)
 
 ## Rearrange array elements
-For this problem is used mergesort, because i used already binary search. Furthermore the runtime for mergesort is only  O(nlog(n)),
-as requested. After the mergesort we loop through the list once and install 2 new list. For this the runtime is O(n)
+For this problem is used mergesort, because i used already binary search. Furthermore the runtime for mergesort is only  O(nlog(n)),as requested. 
+After the mergesort we loop through the list once and install 2 new list. For this the runtime is O(n).
 
 ## Search in a rotated sorted array
 First we must find the pivot in the list, afterwards we can search for our target number. The function findPivot got a runtime of
 O(log n) and also the function binarySearch. the last function use both function to find the target number. 
 
 ## Trie
-
+For inserting a new word we got a runtim of O(n) and for the find function we got O(log n)). Tries were used for autocomplete features in e.g. Word file. 
 
 ## Http router using a trie
+For inserting the new route we got 0(n) and for the search function we got O(log(n)). The class RouteTrie will 
+create the structure and will traverse trough the Tree. The class RouteTrieNode will show the children dictionary and store each new data. The last class 
 
 
