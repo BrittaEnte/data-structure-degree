@@ -1,18 +1,24 @@
 ## Windows Active Directory
 I wrote an active directory that can add user, groups and subgroups. then i wrote a function that can search for a user.
-This function works with a recursion. If the user was not found in one group the function tries the next group or subgroup.
-The worst case scenario is that in each group must be searched. This would be runtime of O(n).
+This function works with a recursion. why did you use that data structure? If the user was not found in one group the function tries the next group or subgroup. this is why i used a recursion to solve this problem. 
+The worst case scenario is that in each group must be searched. This would be runtime of O(n). the space complexity is O(1), because we store 
+the complete directory one time. 
 
 
 ## Blockchain Problem
-The task was to build a blockchain with date, datetime and previous hash. so this is like a linked list. Furthermore this data shall be 
+The task was to build a blockchain with date, datetime and previous hash. as data structure I used a linked list, because Linked List is Dynamic data Structure that can can grow and shrink during run time. Insertion and Deletion Operations are easier.  Furthermore this data shall be 
 coded with a SHA-256 hash. I built a class block and blockchain. In the blockchain i issued a new method called add blockchain, to add 
-new data. As in a linked list you traverse a list with runtime O(1). We just go one time trough the entire list. 
+new data. the runtime and space complexity of the linked list is for both cases O(n). we store the linked list just one time, so O(n) and in worst case
+we must search through all the data one time, so again we got O(n).
 
 
 ## Finding Files
-We need to search a file in a path. So in this case we again can use a recursion. we run trough every directory until we find the 
-right file. So the runtime is O(n).
+We need to search a file in a path. So in this case we again can use a recursion. we run trough every directory until we find the right file.
+the advantage of recursion is that we got a simple and clean solution for our problem. furthermore the recursion function is short, which means the code
+will probably have less bugs. 
+So the runtime is O(n), as in worst case we run trough every file. and the space complecity is also 0(n), as we got one storage of all files, we don´t change this storage, but just search in three files. 
+
+
 
 ## Huffmann Code
 This problem was extrem. I already gave up and continued with the next course topic called basic algorithm. There the topic was heap, heapify 
@@ -20,13 +26,17 @@ and heapsort. My first thought was, that this new knowlegde maybe would help me 
 First you must install a dict with the frequencies of each character. Then you must issue the tree with dict. Afterwards we issue a map, 
 to connect all the frequencies with the code. For the encoding we traverse trough the map and decode all characters. For decoding we 
 traverse through each bit in the string and append the value. At the beginning we loop through all characters, then we loop through
-heap, and then we create the tree. Therefore I would think the Big O Notation is O(n**3).
+heap, and then we create the tree. Therefore I would think the Big O Notation is O(n**3). the space complexity is O(3n log n), as we got heap, a recursion
+and a dict. but the short form is O(n log n).
 
 ## LRU Cache
-The task was to install a LRU Cache. If the cache got more than 5 items, we will delete the first added item. I wrote a get method
-and a set function for this class. An ordered Dictorary was used for this, as you can add and delete in a convenient way. 
-For the get and set function you only iterate once trough the list so the big O Notation is O(1)
+The task was to install a LRU Cache. If the cache got more than 5 items, we will delete the first added item. the used data structure is a linked list, as this dynamic data structure can used for items that will be stored and deleted. 
+I wrote a get method and a set function for this class. An ordered Dictorary was used for this, as you can add and delete in a convenient way. 
+For the get and set function you only iterate once trough the list so the big O Notation is O(1). the space complexity is O(n). 
+
 
 ## Union and Intersection
-My union function got 2 while loops so the runtime is O(2n), but as the 2 does not count we got only O(n). The intersection 
-function got also 2 while loops so the runtime is the same. 
+the data structures of a linked list was implemented by udacity. i coded the union and intersection function. 
+My union function got 2 while loops so the runtime is O(2n), but as the 2 does not count we got only O(n). the space complexity is O(3n), as we store list
+one, list two and then put this two lists into one last list. 
+The intersection function got also 2 while loops so the runtime is the same O(n). the space complexity is again O(3n),as we got three list to store. 
