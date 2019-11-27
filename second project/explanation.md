@@ -1,18 +1,25 @@
 ## Windows Active Directory
 I wrote an active directory that can add user, groups and subgroups. then I wrote a function that can search for a user.
-This function works with a recursion. why did you use that data structure? If the user was not found in one group the function tries the next group or subgroup. this is why I used recursion to solve this problem. 
-The worst-case scenario is that each group must be searched. This would be the runtime of O(n). the space complexity is O(1) because we store the complete directory one time. 
+This function works with a recursion, which is a simply method of solving problems. the functions can be visualised as tree, where the user check all the leaves. when the match is found the function stops.
+The worst-case scenario is that each group must be searched. This would be the runtime of O(n), whereas n is the number of users, groups and subgroups. Our memory complexity is determined by the number of return statements because each function call will be stored on the program stack. To generalize, a recursive function's memory complexity is O(recursion depth). As our tree depth suggests, we will have n total return statements and thus the memory complexity is O(n).
 
 
 ## Blockchain Problem
-The task was to build a blockchain with date, datetime and previous hash. as data structure I used a linked list because Linked List is Dynamic data Structure that can grow and shrink during run time. Insertion and Deletion Operations are easier.  Furthermore, this data shall be coded with a SHA-256 hash. I built a class block and blockchain. In the blockchain I issued a new method called add blockchain, to add new data. the runtime and space complexity of the linked list is for both cases O(n). we store the linked list just one time, so O(n) and in the worst case
-we must search through all the data one time, so again we got O(n).
+The task was to build a blockchain with date, datetime and previous hash. as data structure I used a linked list because Linked List is Dynamic data Structure that can grow and shrink during run time. Insertion and Deletion Operations are easier.  Furthermore, this data shall be coded with a SHA-256 hash. I built a class block and blockchain. In the blockchain I issued a new method called add blockchain, to add new data. 
+time complexity: the runtime of a linked list is O(n).for the append function n represents the node of the blockchain. the function must go trough all nodes and then append the new node. 
+space complexity: O(n) as Linked lists hold two main pieces of information (the value and pointer) per node. This means that the amount of data stored increases linearly with the number of nodes in the list. Therefore, the space complexity of the linked list is linear. 
+
 
 
 ## Finding Files
-We need to search a file in a path. So, in this case, we again can use recursion. we run through every directory until we find the right file. The advantage of recursion is that we got a simple and clean solution for our problem. furthermore, the recursion function is short, which means the code will probably have fewer bugs. 
-So the runtime is O(n), as in worst case we run trough every file. and the space complexity is also 0(n), as we got one storage of all files, we don´t change this storage but just search in three files. 
+design:
+for this problem i used again a recursive function,as we have to check every directory for the file.  For my function, I simply print the path if the suffix is a match, otherwise I check if it's a directory. If it is a directory, for each file in the directory, we recursively call the function again.
 
+time complexity:
+O(n) where n is the sum all directories, all subdirectories and all files. in worst case we don´t have the file, but the programm needs to search in all files and directories. 
+
+space complexity:
+O(n), as we have to store all files, directories and subdirectories in our memory. Our memory complexity is determined by the number of return statements because each function call will be stored on the program stack. To generalize, a recursive function's memory complexity is O(recursion depth). As our tree depth suggests, we will have n total return statements and thus the memory complexity is O(n).
 
 
 ## Huffman Code
