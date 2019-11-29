@@ -23,10 +23,31 @@ O(n), as we have to store all files, directories and subdirectories in our memor
 
 
 ## Huffman Code
-This problem was extreme. I already gave up and continued with the next course topic called basic algorithm. There the topic was heap, heapify and heapsort. My first thought was, that this new knowledge maybe would help me with Huffman code. I think it is still not working. 
-First, you must install a dict with the frequencies of each character. Then you must issue the tree with dict. Afterward, we issue a map, 
-to connect all the frequencies with the code. For the encoding, we traverse through the map and decode all characters. For decoding, we traverse through each bit in the string and append the value. At the beginning we loop through all characters, then we loop through
-heap, and then we create the tree. Therefore I would think the Big O Notation is O(n**3). the space complexity is O(3n log n), as we got heap, recursion, and a dict. but the short form is O(n log n).
+This problem was extreme. I already gave up and continued with the next course topic called basic algorithm. There the topic was heap, heapify and heapsort. My first thought was, that this new knowledge maybe would help me with Huffman code. 
+
+design:
+i used a dictionary as datastructure to store the letters and how often they occur. the dictionary has the advantage that you can store the key and its value. means the letter and the figure of occurence. to install the tree i used a heap because with a heap you can find the greatest and minimum number of occurence of the code. furthermore you can use it as a priority queue. and in our case the letters that appear more often shall mentioned early in the heap to keep the code short. then i issued a map of the heap to add a 0 or 1 to our tree. afterwards i encoded the tree, as the code went over all characters of my sentence. the program catch the binary value from the map. and afterwards we put all values together. the last function is to encode the message. so we do it the other way around. we check every bit and look what letter is behind it. then we append this letter to the decoded message. 
+
+time complexity for encoding:
+resources :https://www.geeksforgeeks.org/complexity-different-operations-binary-tree-binary-search-tree-avl-tree/
+the function has to loop over each character of our message. O(n)
+then we loop over all different frequencies to install our heap. O(n) 
+and then we loop over all the items of the map to get the binary code. O(n)
+so the total must be O(n **3), but the short form is O(n). 
+
+space complexity for encoding:
+the dictionary got O(n log n)
+the heap got O(n log n)
+the the map got also 0(n log n)
+total of O(3n log n), but we write 0( n log n)
+
+time complexity for decoding: 
+we loop over the each bit in the encoded message that gives us O(n)
+
+space complexity for decoding: 
+all the data must be stored in one list. each letter will be added to another so we got O(n log n)
+
+
 
 ## LRU Cache
 The task was to install an LRU Cache. If the cache got more than 5 items, we will delete the first added item. the used data structure is a linked list, as this dynamic data structure can be used for items that will be stored and deleted. 
